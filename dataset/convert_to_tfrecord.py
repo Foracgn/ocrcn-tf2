@@ -36,7 +36,7 @@ class CASIAHWDBGNT(object):
                 yield image, tagcode
 
 
-def run(p):
+def run(p, output):
     all_hwdb_gnt_files = glob.glob(os.path.join(p, '*.gnt'))
     logging.info('got all {} gnt files.'.format(len(all_hwdb_gnt_files)))
     logging.info('gathering charset...')
@@ -63,7 +63,7 @@ def run(p):
     logging.info('all got {} characters.'.format(len(charset)))
     logging.info('{}'.format(charset[:10]))
 
-    tfrecord_f = os.path.basename(os.path.dirname(p)) + '.tfrecord'
+    tfrecord_f = output + '.tfrecord'
     logging.info('tfrecord file saved into: {}'.format(tfrecord_f))
     i = 0
     with tf.io.TFRecordWriter(tfrecord_f) as tfrecord_writer:
@@ -102,5 +102,6 @@ if __name__ == "__main__":
         logging.error('send a pattern like this: {}'.format('./hwdb_raw/HWDB1.1trn_gnt/'))
     else:
         p = sys.argv[1]
+        output = sys.argv[2]
         logging.info('converting from: {}'.format(p))
-        run(p)
+        run(p, output)
