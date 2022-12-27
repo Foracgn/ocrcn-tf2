@@ -43,7 +43,7 @@ def run(p, output):
     charset = []
     if os.path.exists('characters.txt'):
         logging.info('found exist characters.txt...')
-        with open('characters.txt', 'r', encoding='gb2312') as f:
+        with open('characters.txt', 'r', encoding='UTF-8') as f:
             charset = f.readlines()
             charset = [i.strip() for i in charset]
     else:
@@ -52,7 +52,7 @@ def run(p, output):
                 hwdb = CASIAHWDBGNT(gnt)
                 for img, tagcode in hwdb.get_data_iter():
                     try:
-                        label = struct.pack('>H', tagcode).decode('utf-8')
+                        label = struct.pack('>H', tagcode).decode('gb2312')
                         label = label.replace('\x00', '')
                         charset.append(label)
                     except Exception as e:
