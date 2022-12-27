@@ -30,9 +30,6 @@ def preprocess(x):
     minus mean pixel or normalize?
     """
     # original is 64x64, add a channel dim
-    x['image'] = tf.expand_dims(x['image'], axis=-1)
-    x['image'] = tf.image.resize(x['image'], (target_size, target_size))
-    x['image'] = (x['image'] - 128.) / 128.
     return x['image'], x['label']
 
 
