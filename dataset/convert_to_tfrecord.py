@@ -75,8 +75,8 @@ def run(p):
                     w = img.shape[0]
                     h = img.shape[1]
                     # img = cv2.resize(img, (64, 64))
-                    label = struct.pack('>H', tagcode).decode('utf-8')
-                    # label = label.replace('\x00', '')
+                    label = struct.pack('>H', tagcode).decode('gb2312')
+                    label = label.replace('\x00', '')
                     index = charset.index(label)
                     # save img, label as example
                     example = tf.train.Example(features=tf.train.Features(
