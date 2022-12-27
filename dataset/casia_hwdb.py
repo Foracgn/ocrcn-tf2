@@ -54,7 +54,7 @@ def parse_example_v2(record):
     # we can not reshape since it stores with original size
     w = features['width']
     h = features['height']
-    img = tf.cast(tf.reshape(img, (w, h)), dtype=tf.float32)
+    img = tf.cast(tf.reshape(img, (w, h)), dtype=tf.float64)
     label = tf.cast(features['label'], tf.int64)
     return {'image': img, 'label': label}
 
