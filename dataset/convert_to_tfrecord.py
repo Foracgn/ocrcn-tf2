@@ -52,7 +52,7 @@ def run(p):
                 hwdb = CASIAHWDBGNT(gnt)
                 for img, tagcode in hwdb.get_data_iter():
                     try:
-                        label = struct.pack('>H', tagcode).decode('gb2312')
+                        label = struct.pack('>H', tagcode).decode('utf-8')
                         label = label.replace('\x00', '')
                         charset.append(label)
                     except Exception as e:
@@ -75,7 +75,7 @@ def run(p):
                     w = img.shape[0]
                     h = img.shape[1]
                     # img = cv2.resize(img, (64, 64))
-                    label = struct.pack('>H', tagcode).decode('gb2312')
+                    label = struct.pack('>H', tagcode).decode('utf-8')
                     label = label.replace('\x00', '')
                     index = charset.index(label)
                     # save img, label as example
