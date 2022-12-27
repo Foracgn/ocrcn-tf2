@@ -28,7 +28,7 @@ def parse_example(record):
                                                   tf.io.FixedLenFeature([], tf.string),
                                           })
     img = tf.io.decode_raw(features['image'], out_type=tf.uint8)
-    img = tf.cast(tf.reshape(img, (64, 64)), dtype=tf.float32)
+    img = tf.cast(tf.reshape(img, (64, 64)), dtype=tf.float64)
     label = tf.cast(features['label'], tf.int64)
     return {'image': img, 'label': label}
 
