@@ -43,7 +43,7 @@ def run(p, output):
     charset = []
     if os.path.exists('characters.txt'):
         logging.info('found exist characters.txt...')
-        with open('characters.txt', 'r', encoding='utf-8') as f:
+        with open('characters.txt', 'r', encoding='gb2312') as f:
             charset = f.readlines()
             charset = [i.strip() for i in charset]
     else:

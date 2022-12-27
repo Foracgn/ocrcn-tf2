@@ -46,8 +46,8 @@ def train():
     val_ds = load_val_ds()
     val_ds = val_ds.shuffle(100).map(preprocess).batch(6).repeat()
 
-    # for data in train_dataset.take(2):
-    #     print(data)
+    for data in train_dataset.take(2):
+        print(data)
 
     # init model
     model = build_net_003((64, 64, 1), num_classes)
