@@ -40,7 +40,7 @@ def train():
     train_dataset = load_ds()
     train_dataset = train_dataset.shuffle(100).map(preprocess).batch(6).repeat()
 
-    print(train_dataset[0])
+    print(train_dataset)
 
     val_ds = load_val_ds()
     val_ds = val_ds.shuffle(100).map(preprocess).batch(6).repeat()
