@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86d3061-c2c8-42bb-882f-53f6373c7f88" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/dataset/casia_hwdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/casia_hwdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_simple.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

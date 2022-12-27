@@ -41,10 +41,10 @@ def train():
     num_classes = len(all_characters)
     logging.info('all characters: {}'.format(num_classes))
     train_dataset = load_ds()
-    train_dataset = train_dataset.shuffle(100).map(preprocess).batch(32).repeat()
+    train_dataset = train_dataset.shuffle(100).map(preprocess).batch(6).repeat()
 
     val_ds = load_val_ds()
-    val_ds = val_ds.shuffle(100).map(preprocess).batch(32).repeat()
+    val_ds = val_ds.shuffle(100).map(preprocess).batch(6).repeat()
 
     # for data in train_dataset.take(2):
     #     print(data)
@@ -79,7 +79,7 @@ def train():
                 train_dataset,
                 validation_data=val_ds,
                 validation_steps=1000,
-                epochs=15000,
+                epochs=500,
                 steps_per_epoch=1024,
                 callbacks=callbacks)
         except KeyboardInterrupt:
